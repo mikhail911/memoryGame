@@ -1,0 +1,116 @@
+:root {
+    --green: rgba(0, 128, 0, 0.5);
+    --yellow: rgba(255, 255, 0, 0.5);
+    --red: rgba(255, 0, 0, 0.5);
+    --score-board-color: rgba(26, 24, 24, 0.603); 
+}
+
+body {
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url("img/tic-tac-toe.png");
+    margin: 0 !important;
+    font-family: 'PT Sans', sans-serif;
+}
+
+#progressBar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(26, 24, 24, 0.603);
+}
+
+#timeLeftStatus {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#progressStatus {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+}
+
+#scoreBoard {
+    background-color: var(--score-board-color);
+    color: white; 
+    position: fixed;
+    height: 50px;
+    top: 50px;
+    left: 0px;
+    padding-left: 10px;
+    display: flex;
+    border-top: 1px groove white;
+}
+
+#scoreBoard > div {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px groove white;
+}
+
+#startButton {
+    height: 100%;
+}
+
+#startButton:hover {
+    cursor: pointer;
+    background-color: var(--green);  
+}
+
+.green {
+    background-color: var(--green);
+}
+
+.orange {
+    background-color: var(--yellow);
+}
+
+.red {
+    background-color: var(--red);
+}
+
+#cardsDeck {
+    position: fixed;
+    top: 150px;
+    height: 80vh;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(5, 150px);
+    grid-template-rows: repeat(4, 150px);
+    grid-gap: 20px;
+}
+
+.card,
+.back,
+.front {
+    height: 150px;
+    width: 150px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center; 
+    opacity: 0.8;
+}
+
+.back,
+.front {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
