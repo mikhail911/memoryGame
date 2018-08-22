@@ -9,7 +9,75 @@ body {
     /* Background pattern from Toptal Subtle Patterns */
     background-image: url("img/tic-tac-toe.png");
     margin: 0 !important;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#summary {
+    background-color: rgba(44, 41, 41, 0.808);
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#summaryBox {
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    flex-direction: column;
+    top: 175px;
+    height: 74vh;
+    width: 850px;
+    background-color: rgba(26, 24, 24, 0.8);
+    color: white;
+    border-radius: 20px;
+}
+
+#summaryTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 700;
+    width: 100%;
+    height: 72px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+#summaryMsg {
+   display: grid;
+   width: 100%;
+   height: 100%;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: (6, 1fr);
+}
+
+#buttonArea {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeButton {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.closeButton img {
+    width: 40px;
+    height: 40px;
+}
+
+#summaryMsg > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
 }
 
 #progressBar {
@@ -32,6 +100,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 22px;
 }
 
 #progressStatus {
@@ -47,6 +116,7 @@ body {
     background-color: var(--score-board-color);
     color: white; 
     position: fixed;
+    font-size: 22px;
     height: 50px;
     top: 50px;
     left: 0px;
@@ -143,4 +213,9 @@ body {
 
 .match .front {
     background: #004477 !important;
+}
+
+.hideMe {
+    visibility: hidden;
+    background-color: transparent !important;
 }
