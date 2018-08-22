@@ -1,4 +1,4 @@
-let timeLeft = 12;
+let timeLeft = 240;
 let timer;
 let count = 0;
 let clicksCount = 0;
@@ -17,13 +17,25 @@ const startButton       = document.getElementById("startButton");
 const pairsFoundVal     = document.getElementById("pairsFoundVal");
 const pairsNotFoundVal  = document.getElementById("pairsNotFoundVal");
 const totalClickVal     = document.getElementById("totalClickVal");
+const hideMe            = document.getElementById("summary")
 const game              = document.getElementById('game');
 const grid              = document.createElement('section');
+const valval            = document.getElementsByClassName("gridItem")[0];
+const val1              = document.getElementsByClassName("val1")[0];
+const val2              = document.getElementsByClassName("val2")[0];
+const val3              = document.getElementsByClassName("val3")[0];
+const val4              = document.getElementsByClassName("val4")[0];
+const val5              = document.getElementsByClassName("val5")[0];
+const closeButton       = document.getElementById("buttonArea");
+
 grid.setAttribute('class', 'grid');
 game.appendChild(grid);
 
 startButton.addEventListener("click", startGame);
-timeLeftStatus.innerHTML = "Time left: " + Math.floor(timeLeft / 600) + " minutes " + timeLeft % 60 + " seconds";
+closeButton.addEventListener("click", function() {
+    hideMe.classList.add("hideMe");
+});
+timeLeftStatus.innerHTML = "Time left: " + Math.floor(timeLeft / 60) + " minutes " + timeLeft % 60 + " seconds";
 
 var gameCard = [
     {
@@ -105,8 +117,11 @@ function refreshCards() {
 function startGame() {
     if (gameStart === false) {
         gameStart = true;
+        startedByClick = true;
         matchCount = 0;
-        timer = setInterval(countdown, 1200);
+        clicksCount = 0;
+        timeLeft = 240;
+        timer = setInterval(countdown, 2400);
         startButton.innerHTML = "Stop";
         startButton.classList.remove("green");
         startButton.classList.add("red");
@@ -118,8 +133,10 @@ function startGame() {
 
 function stopGame() {
     gameStart = false;
+    hideMe.classList.remove("hideMe");
+    summary();
     clearTimeout(timer);
-    timeLeft = 12;
+    timeLeft = 240;
     startButton.innerHTML = "Start";
     startButton.classList.remove("red");
     startButton.classList.add("green");
@@ -132,20 +149,24 @@ function countdown() {
     if (timeLeft == 0) {
         stopGame();
     }
-    if (timeLeft <= 5 && timeLeft >= 2) { 
-        progressStatus.style = "width: " + (timeLeft / 12) * 100 + "%;"; 
+    if (timeLeft <= 50 && timeLeft >= 2) { 
+        progressStatus.style = "width: " + (timeLeft / 120) * 100 + "%;"; 
         progressStatus.classList.remove("green");
         progressStatus.classList.add("orange");
     }
-    if (timeLeft <= 2) { 
-        progressStatus.style = "width: " + (timeLeft / 12) * 100 + "%;"; 
+    if (timeLeft <= 20) { 
+        progressStatus.style = "width: " + (timeLeft / 120) * 100 + "%;"; 
         progressStatus.classList.remove("orange");
         progressStatus.classList.add("red");}
     else {     
-        progressStatus.style = "width: " + (timeLeft / 12) * 100 +"%;"; 
+        progressStatus.style = "width: " + (timeLeft / 120) * 100 +"%;"; 
         progressStatus.classList.add("green");
     }
-    timeLeftStatus.innerHTML = "Time left: " + Math.floor(timeLeft / 600) + " minutes " + timeLeft % 60 + " seconds";
+    if (matchCount === 10) {
+        stopGame();
+    }
+
+    timeLeftStatus.innerHTML = "Time left: " + Math.floor(timeLeft / 60) + " minutes " + timeLeft % 60 + " seconds";
     timeLeft--;
 }
 
@@ -210,3 +231,30 @@ grid.addEventListener("click", function(event){
     }
     console.log(clicksCount);
 });
+
+function summary() {
+    percent = (matchCount / 10) * 100;
+    val1.innerHTML = percent + "%";
+    if (percent <= 10) {
+        val1.classList.add("red");
+        valval.classList.add("red");
+    } 
+    if (percent > 10 && percent <= 50) {
+        val1.classList.add("orange");
+        valval.classList.add("orange");
+    } else {
+        val1.classList.add("green");
+        valval.classList.add("green");
+    }
+    val2.innerHTML = matchCount;
+    val3.innerHTML = 10 - matchCount;
+    val4.innerHTML = clicksCount;
+    timePlay = 240 - timeLeft;
+    if (timeLeft % 60 === 0) {
+        console.log(timePlay);
+        val5.innerHTML = Math.floor(timePlay / 60) + " minutes 0 seconds";
+    } else {
+        console.log(timePlay);
+        val5.innerHTML = Math.floor(timePlay / 60) + " minutes " + ((timePlay % 60) - 1) + " seconds";
+    }
+}

@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <title>MemoryGame</title>
+    <title>memoryGame</title>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <div id="summary" class="hideMe">
+        <div id="summaryBox">
+            <div id="summaryTitle">Game summary</div>
+            <div id="summaryMsg">
+                <div class="gridItem">Game percentage:</div>
+                <div class="val1"></div>
+                <div class="gridItem">Found pairs:</div>
+                <div class="val2"></div>
+                <div class="gridItem">Pairs left:</div>
+                <div class="val3"></div>
+                <div class="gridItem">Total click:</div>
+                <div class="val4"></div>
+                <div class="gridItem">Time:</div>
+                <div class="val5"></div>
+                <div class="closeButton"><div id="buttonArea"><img src="img/window-close-solid.svg" />&nbsp;Close</div></div>
+            </div>
+        </div>
+    </div>
     <div id="progressBar">   
         <div id="timeLeftStatus"></div>
         <div id="progressStatus" class="green"></div>     
