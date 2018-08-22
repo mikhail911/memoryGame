@@ -56,7 +56,7 @@ body {
 }
 
 #scoreBoard > div {
-    width: 20vw;
+    width: calc(100vw / 7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,8 +68,7 @@ body {
 }
 
 #startButton:hover {
-    cursor: pointer;
-    background-color: var(--green);  
+    cursor: pointer; 
 }
 
 .green {
@@ -84,9 +83,9 @@ body {
     background-color: var(--red);
 }
 
-#cardsDeck {
+.grid {
     position: fixed;
-    top: 150px;
+    top: 185px;
     height: 80vh;
     width: 100%;
     display: grid;
@@ -97,20 +96,51 @@ body {
     grid-gap: 20px;
 }
 
+.card {
+  position: relative;
+  -webkit-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+
 .card,
 .back,
 .front {
     height: 150px;
     width: 150px;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center; 
-    opacity: 0.8;
 }
 
 .back,
 .front {
-  position: absolute;
-  -webkit-backface-visibility: hidden;
+    position: absolute;
+   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; 
+}
+
+.front {
+    background-image: url("img/question-solid.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    border-radius: 15px;
+}
+
+.selected {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.match .front {
+    background: #004477 !important;
 }
