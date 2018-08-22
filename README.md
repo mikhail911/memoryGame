@@ -17,7 +17,7 @@ JavaScript based, match pair memory game
 ## Screenshots 
 
 ![Game window screenshoot](project_img/screen1.png)
-![Finished game screenshoot](project_img/screen1.png)
+![Finished game screenshoot](project_img/screen2.png)
 
 ## External resources used in project
 
