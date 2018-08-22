@@ -1,5 +1,23 @@
 # memoryGame
-JavaScript based match pair memory game
+
+JavaScript based, match pair memory game
+
+## Functionalities
+
+*
+
+## Tested on following browsers
+
+| Browser  | Version  | Status |
+|---|---|---|
+|Mozilla Firefox|62|OK|
+|Google Chrome|68|OK|
+|Opera|55|OK|  
+
+## Screenshots 
+
+![Game window screenshoot](project_img/screen1.png)
+![Finished game screenshoot](project_img/screen1.png)
 
 ## External resources used in project
 

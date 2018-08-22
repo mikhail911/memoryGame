@@ -121,7 +121,7 @@ function startGame() {
         matchCount = 0;
         clicksCount = 0;
         timeLeft = 240;
-        timer = setInterval(countdown, 2400);
+        timer = setInterval(countdown, 1000);
         startButton.innerHTML = "Stop";
         startButton.classList.remove("green");
         startButton.classList.add("red");
@@ -149,17 +149,17 @@ function countdown() {
     if (timeLeft == 0) {
         stopGame();
     }
-    if (timeLeft <= 50 && timeLeft >= 2) { 
-        progressStatus.style = "width: " + (timeLeft / 120) * 100 + "%;"; 
+    if (timeLeft <= 120 && timeLeft >= 30) { 
+        progressStatus.style = "width: " + (timeLeft / 240) * 100 + "%;"; 
         progressStatus.classList.remove("green");
         progressStatus.classList.add("orange");
     }
-    if (timeLeft <= 20) { 
-        progressStatus.style = "width: " + (timeLeft / 120) * 100 + "%;"; 
+    if (timeLeft < 30) { 
+        progressStatus.style = "width: " + (timeLeft / 240) * 100 + "%;"; 
         progressStatus.classList.remove("orange");
         progressStatus.classList.add("red");}
     else {     
-        progressStatus.style = "width: " + (timeLeft / 120) * 100 +"%;"; 
+        progressStatus.style = "width: " + (timeLeft / 240) * 100 +"%;"; 
         progressStatus.classList.add("green");
     }
     if (matchCount === 10) {

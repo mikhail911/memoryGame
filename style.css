@@ -29,7 +29,7 @@ body {
     position: fixed;
     flex-direction: column;
     top: 175px;
-    height: 74vh;
+    height: 72vh;
     width: 850px;
     background-color: rgba(26, 24, 24, 0.8);
     color: white;
@@ -167,12 +167,13 @@ body {
 }
 
 .card {
-  position: relative;
-  -webkit-transition: all .4s linear;
-  -o-transition: all .4s linear;
-  transition: all .4s linear;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: all .4s linear;
+    -o-transition: all .4s linear;
+    transition: all .4s linear;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 
@@ -186,7 +187,7 @@ body {
 .back,
 .front {
     position: absolute;
-   -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
 
