@@ -18,16 +18,29 @@ body {
     z-index: 100;
     width: 100vw;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #summaryBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     position: fixed;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     top: 175px;
     height: 72vh;
     width: 850px;
@@ -37,8 +50,12 @@ body {
 }
 
 #summaryTitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 50px;
     font-weight: 700;
     width: 100%;
@@ -47,24 +64,35 @@ body {
 }
 
 #summaryMsg {
+   display: -ms-grid;
    display: grid;
    width: 100%;
    height: 100%;
-   grid-template-columns: repeat(2, 1fr);
-   grid-template-rows: (6, 1fr);
+   -ms-grid-columns: (1fr)[2];
+       grid-template-columns: repeat(2, 1fr);
+   -ms-grid-rows: (6, 1fr);
+       grid-template-rows: (6, 1fr);
 }
 
 #buttonArea {
     width: 150px;
     height: 50px;
     cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .closeButton {
-    grid-column-start: 1;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-column-span: 2;
     grid-column-end: 3;
 }
 
@@ -74,9 +102,15 @@ body {
 }
 
 #summaryMsg > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 25px;
 }
 
@@ -97,9 +131,15 @@ body {
     height: 50px;
     z-index: 2;
     color: white; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 22px;
 }
 
@@ -121,15 +161,23 @@ body {
     top: 50px;
     left: 0px;
     padding-left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border-top: 1px groove white;
 }
 
 #scoreBoard > div {
     width: calc(100vw / 7);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-right: 1px groove white;
 }
 
@@ -158,11 +206,18 @@ body {
     top: 185px;
     height: 80vh;
     width: 100%;
+    display: -ms-grid;
     display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(5, 150px);
-    grid-template-rows: repeat(4, 150px);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-columns: (150px)[5];
+        grid-template-columns: repeat(5, 150px);
+    -ms-grid-rows: (150px)[4];
+        grid-template-rows: repeat(4, 150px);
     grid-gap: 20px;
 }
 
